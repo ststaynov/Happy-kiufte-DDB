@@ -47,7 +47,7 @@ function init() {
       alert(e.name);
     }
 
-    $('body').on('click', function () {
+    $('body').on('click touchstart', function () {
         console.log('clicked');
         getTheMedia(sourceId[0]);
     })
