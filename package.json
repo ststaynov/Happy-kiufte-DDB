@@ -1,0 +1,30 @@
+{
+  "name": "3dportfolio",
+  "version": "1.0.0",
+  "description": "My 3d portfolio made with three.js",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-cssmin": "^0.1.7",
+    "gulp-plumber": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "gulp-uglify": "^1.5.3",
+    "gulp-rename": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ststaynov/3dPortfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ststaynov/3dPortfolio/issues"
+  },
+  "homepage": "https://github.com/ststaynov/3dPortfolio#readme"
+}

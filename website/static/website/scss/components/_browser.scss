@@ -1,0 +1,51 @@
+
+.c-browser {
+  width: 125px;
+  height: 85px;
+  margin: auto;
+  border-top: 20px solid #333;
+  //background-color: rgba(#4294f0, .3);
+  -webkit-box-shadow: 4px 3px 14px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 3px 14px -2px rgba(0,0,0,0.75);
+  box-shadow: 4px 3px 14px -2px rgba(0,0,0,0.75);
+  cursor: pointer;
+  
+  &.big {
+    cursor: default;
+  }
+  .c-browser-buttons {
+    position: absolute;
+    margin: 0;
+    padding-left: 10px;
+    top: -13px;
+    font-size: 0;
+  }
+
+  .e-browser-button {
+    width: 8px;
+    height: 8px;
+    margin-left: 2px;
+    display: inline-block;
+    border-radius: 100%;
+  }
+
+  .btn-close {
+    background-color: red;
+  }
+
+  .btn-minimize {
+    background-color: greenyellow;
+  }
+
+  .btn-enlarge {
+    background-color: #4294f0;
+  }
+
+  .c-browser-screen {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    left: 10px;
+    top: 10px;
+  }
+}
