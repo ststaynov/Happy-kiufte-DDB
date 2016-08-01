@@ -20,7 +20,8 @@ function init() {
         if (sourceInfo.kind === 'audio') {
         } else if (sourceInfo.kind === 'video') {
             sourceID.push(sourceInfo.id);
-            console.log('source: ', sourceInfo.id);
+            //alert('source: ', sourceInfo.id);
+            $('.text').append(sourceInfo.id);
         } else {
           console.log('Some other kind of source: ', sourceInfo.id);
         }
