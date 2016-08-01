@@ -6,7 +6,8 @@ window.onload = init;
 function init() {
     var video = document.querySelector("#videoElement");
     var constraints = {
-    video: {  audio: true, facingMode: { exact: "environment" } }
+        audio: true,
+        video: {facingMode: { exact: "environment" } }
   };
 
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
