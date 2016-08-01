@@ -19,8 +19,8 @@ function init() {
         var sourceInfo = sourceInfos[i];
         if (sourceInfo.kind === 'audio') {
         } else if (sourceInfo.kind === 'video') {
-            sourceID.push(sourceInfo.id);
-            //alert('source: ', sourceInfo.id);
+            sourceID.push("" + sourceInfo.id);
+            //alert('Pushed: ' +  sourceInfo.id);
             $('.text').append(sourceInfo.id);
         } else {
           console.log('Some other kind of source: ', sourceInfo.id);
@@ -28,25 +28,31 @@ function init() {
       }
     }
 
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+    setTimeout(explode, 2000);
 
-    var constraints = {
-        audio: false,
-        video: {
-          optional: [{
-            sourceId: sourceID[1]
-          }]
+    function explode() {
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+        var constraints = {
+            audio: false,
+            video: {
+                optional: [{
+                    sourceId: sourceID[0]
+                }]
+            }
+        };
+        console.log(constraints.video);
+
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia(constraints, handleVideo, videoError);
         }
-  };
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia(constraints, handleVideo, videoError);
-    }
 
-    function handleVideo(stream) {
-      video.src = window.URL.createObjectURL(stream);
-    }
+        function handleVideo(stream) {
+            video.src = window.URL.createObjectURL(stream);
+        }
 
-    function videoError(e) {
-      alert(e.name);
+        function videoError(e) {
+            alert(e.name);
+        }
     }
 }
