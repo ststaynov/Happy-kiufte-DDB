@@ -37,7 +37,7 @@ function init() {
             audio: false,
             video: {
                 optional: [{
-                    sourceId: sourceID[0]
+                    sourceId: sourceID[1]
                 }]
             }
         };
