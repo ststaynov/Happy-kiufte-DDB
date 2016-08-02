@@ -17,33 +17,38 @@
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="{% static "website/js/main.js" %}"></script>
-    <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
+<div class="logo"></div>
+
+{#<div class="c-kiufte-circle">#}
+{#    <div class="circles" id="circles">#}
+{#        <div class="circle"></div>#}
+{#        <div class="circle"></div>#}
+{#        <div class="circle"></div>#}
+{#        <div class="circle"></div>#}
+{##}
+{#        <aside class="warning">#}
+{#            <span>View in Chrome, Firefox or Safari for the best effect!</span>#}
+{#        </aside>#}
+{#    </div>#}
+{#</div>#}
+<div class="loading-indicator">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 130" overflow="visible" enable-background="new 0 0 130 130" id="progress"><circle fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="64.8" cy="64.8" r="59.8"></circle><circle class="styled" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="64.8" cy="64.8" r="59.8"></circle></svg>
+</div>
+<p><b class="percentage"></b></p>
+
 <div class="c-overlay-container">
-    <div class="e-first-overlay"></div>
-    <div class="e-second-overlay"></div>
-    <div class="e-third-overlay"></div>
+    <div class="e-first-overlay"><div class="text">Малко текст</div></div>
+    <div class="e-second-overlay"><div class="text">Some text for the second overlay</div></div>
+    <div class="e-third-overlay"><div class="text">Some text for the third overlay</div></div>
 
-    <button class="e-btn-next"></button>
+    <button class="e-btn-next">Следвашо</button>
+
 </div>
-
-<div class="c-kiufte-circle">
-    <div class="circles" id="circles">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-
-    <aside class="warning">
-        <span>View in Chrome, Firefox or Safari for the best effect!</span>
-    </aside>
-</div>
-</div>
-
-    <div class="text" style=" height: 10vh; color: #fff; position: absolute;margin: auto;left: 0;right: 0;top: 0; bottom: 0;"></div>
     <div id="container">
         <video autoplay="true" id="videoElement">
 
