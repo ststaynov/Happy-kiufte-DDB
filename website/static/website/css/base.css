@@ -59,6 +59,7 @@ body {
 }
 
 div.move-out {
+  -webkit-transform: translateY(-100%);
   transform: translateX(100%);
   /*right: 100%;*/
 }
@@ -97,6 +98,27 @@ button.faded {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.c-joke {
+  width: 1vw;
+  height: 1vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  background-image: url(../img/joke.png);
+  background-size: cover;
+  transition: 2s all;
+}
+
+.c-joke.show {
+  width: 90vw;
+  height: 50vw;
+  opacity: 1;
 }
 
 /* Circle */
@@ -254,16 +276,11 @@ button.faded {
 * {
   box-sizing: border-box;
 }
-body {
-  overflow: hidden;
-  background: #143741;
-  font-family: "AvenirNext-Regular", Avenir, Helvetica, Arial, sans-serif;
-}
 .loading-indicator {
   -webkit-animation: rotatefull 9s 0s infinite linear forwards;
           animation: rotatefull 9s 0s infinite linear forwards;
-  width: 10rem;
-  height: 10rem;
+  width: 220px;
+  height: 220px;
   position: absolute;
   top: calc(50vh - 80px);
   left: 50%;
@@ -280,7 +297,7 @@ svg circle {
 }
 svg circle:last-of-type {
   opacity: 0;
-  stroke: #ddd;
+  stroke: #CCC;
   -webkit-transition: stroke-dashoffset 0.5s ease-out;
   transition: stroke-dashoffset 0.5s ease-out;
 }
@@ -291,6 +308,7 @@ svg circle:last-of-type {
 p {
   text-align: center;
   color: #fff;
+  display: none;
   font-size: 2rem;
   position: absolute;
   top: calc(50vh - 50px);

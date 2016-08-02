@@ -87,7 +87,7 @@ function init() {
         var paths = document.getElementsByClassName('styled');
         var path = paths[paths.length-1];
         var counter = 0;
-        var total = 47;
+        var total = 147;
 
         var length = path.r.baseVal.value * 2 * Math.PI;
 
@@ -110,6 +110,7 @@ function init() {
             if (percentage >= 100) {
               setTimeout(function() {
               document.getElementById('progress').classList.add('complete'); document.body.classList.add('complete');
+                $('.c-joke').addClass('show');
               }, 500);
             }
           }, (Math.random() * 5000));
