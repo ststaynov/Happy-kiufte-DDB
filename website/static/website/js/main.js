@@ -95,17 +95,15 @@ function init() {
           'stroke-dasharray': length,
           'stroke-dashoffset': 0,
           'opacity': 1,
-        })
+        });
 
         //simulate multiple requests completing at random times. setTimeout acts as success handler for ajax calls.
         for (var i = 0; i < total; ++i) {
           setTimeout( function() {
             counter++;
             var percentage = Math.ceil(100*counter/total);
-            $('.percentage').text(percentage)
-            $(path).css({
-              'stroke-dashoffset': -((counter/total)*length),
-            });
+            $('.percentage').text(percentage);
+            $(path).css({'stroke-dashoffset': -((counter/total)*length),});
 
             if (percentage >= 100) {
               setTimeout(function() {
@@ -115,6 +113,5 @@ function init() {
             }
           }, (Math.random() * 5000));
         }
-
     }
 }
