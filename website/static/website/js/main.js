@@ -62,17 +62,22 @@ function init() {
         count = 0,
         $firstOverlay = $('.e-first-overlay'),
         $secondOverlay = $('.e-second-overlay'),
-        $thirdOverlay = $('.e-third-overlay');
-    $('body').on('click', $nextBtn, function () {
+        $thirdOverlay = $('.e-third-overlay'),
+        $body = $('body');
+    $body.on('click', $nextBtn, function () {
         count+=1;
         console.log('click' + count);
 
         switch (count) {
             case 1:
                 $firstOverlay.addClass('move-out');
+                $body.addClass('show-second');
+                $body.removeClass('show-third');
                 break;
             case 2:
                 $secondOverlay.addClass('move-out');
+                $body.removeClass('show-second');
+                $body.addClass('show-third');
                 break;
             case 3:
                 $thirdOverlay.addClass('move-out');

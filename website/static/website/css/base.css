@@ -1,24 +1,135 @@
 * {
     box-sizing: border-box;
-  font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 body {
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: #f9f5ef;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cd4f00+0,ca0e05+50,9b0c05+100 */
+    background: rgb(205,79,0); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(205,79,0,1) 0%, rgba(202,14,5,1) 50%, rgba(155,12,5,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(205,79,0,1) 0%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(205,79,0,1) 0%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd4f00', endColorstr='#9b0c05',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+
+body.show-second .e-second-overlay .e-details,
+body.show-third .e-second-overlay .e-details{
+   opacity: 1;
+}
+
+svg path {
+    @include transition(all 1s ease-in-out);
+}
+body.show-third .e-third-overlay .e-details {
+    opacity: 1;
+}
+
+
+body.show-second .e-order svg path {
+    stroke: #000;
+    /*fill: #000;*/
+}
+
+body.show-second .e-scan svg path {
+    stroke: #fff;
+    fill: #fff;
+}
+
+body.show-third .e-order svg path {
+    stroke: #000;
+    /*fill: #000;*/
+}
+
+body.show-third .e-joke svg path {
+    stroke: #fff;
+}
+
+body.show-third {
+
+}
+
+.c-logo-container {
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #9b0c05   ;
+    z-index: 15;
 }
 
 .logo {
+    width: 102px;
+    height: 100%;
+    margin: 0 auto;
     background-image: url(../img/happy-logo.png);
-    width: 135px;
-    height: 86px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.c-navigation {
+    width:100%;
+    padding: 20px;
+    position: fixed;
+    top: 80px;
+    text-align: center;
+    z-index: 2;
+}
+
+.e-order,
+.e-scan,
+.e-joke {
+    width: 54px;
+    height: 53px;
+    display: inline-block;
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.e-order {
+    float: left;
+    /*background-image: url(../img/order-kiufte.svg);*/
+}
+
+.e-scan {
+    /*background-image: url(../img/scan-kiufte.svg);*/
+}
+
+.e-joke {
+    float: right;
+    /*background-image: url(../img/joke-kiufte.svg);*/
+}
+
+.e-dashed-line {
+    width: 24%;
+    height: 29px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/dashed-line.svg)
+}
+
+.c-dashed-circle {
+    width: 70vw;
+    height: 70vw;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 15;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/dashed-circle.svg);
+    z-index: 16;
 }
 
 .c-overlay-container {
@@ -36,26 +147,50 @@ body {
 .e-first-overlay,
 .e-second-overlay,
 .e-third-overlay {
- position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: 1s all;
-  border: 5px solid black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1s all;
 }
 
 .e-first-overlay {
-  background-color: #850001;
   z-index: 6;
 }
 
+.e-first-overlay > .e-details {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/order-kiufte.svg);
+}
+
+.e-second-overlay > .e-details {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/scan-kiufte.svg);
+    opacity: 0;
+    @include transition(all 1s ease-in-out);
+}
+
+.e-third-overlay > .e-details {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/joke-kiufte.svg);
+    opacity: 0;
+    @include transition(all 1s ease-in-out);
+}
+
 .e-second-overlay {
-  background-color: #850001;
   z-index: 4;
 }
 
 .e-third-overlay {
-  background-color: #850001;
-  z-index: 2;
+    z-index: 2;
+     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cd4f00+0,ca0e05+50,9b0c05+100 */
+    background: rgb(205,79,0); /* Old browsers */
+    background: -moz-linear-gradient(135deg, rgba(205,79,0,1) 0%, rgba(202,14,5,1) 50%, rgba(155,12,5,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(135deg, rgba(205,79,0,1) 0%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(205,79,0,1) 0%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd4f00', endColorstr='#9b0c05',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 div.move-out {
@@ -86,9 +221,9 @@ button.faded {
   transition: 2s opacity;
 }
 
-.text {
-  width: 220px;
-  height: 10vh;
+.e-details {
+  width: 165px;
+  height: 165px;
   font-size: 22px;
   text-align: center;
   color: #fff;
