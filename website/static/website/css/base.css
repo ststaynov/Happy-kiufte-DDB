@@ -21,11 +21,11 @@ body {
 
 body.show-second .e-second-overlay .e-details,
 body.show-third .e-second-overlay .e-details{
-   opacity: 1;
+    opacity: 1;
 }
 
 svg path {
-    @include transition(all 1s ease-in-out);
+    @include transition(all 1s ease);
 }
 body.show-third .e-third-overlay .e-details {
     opacity: 1;
@@ -82,6 +82,19 @@ body.show-third {
     top: 80px;
     text-align: center;
     z-index: 2;
+}
+
+.c-bottom-navigation {
+
+}
+
+.e-first,
+.e-second,
+.e-third {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 100%;
 }
 
 .e-order,
@@ -168,7 +181,7 @@ body.show-third {
     background-repeat: no-repeat;
     background-image: url(../img/scan-kiufte.svg);
     opacity: 0;
-    @include transition(all 1s ease-in-out);
+    @include transition(opacity 1s ease-in-out);
 }
 
 .e-third-overlay > .e-details {
@@ -176,7 +189,7 @@ body.show-third {
     background-repeat: no-repeat;
     background-image: url(../img/joke-kiufte.svg);
     opacity: 0;
-    @include transition(all 1s ease-in-out);
+    @include transition(opacity 1s ease-in-out);
 }
 
 .e-second-overlay {
@@ -194,8 +207,10 @@ body.show-third {
 }
 
 div.move-out {
-  -webkit-transform: translateY(-100%);
-  transform: translateX(100%);
+    opacity: 0;
+    @include transition(opacity 1s ease);
+  /*-webkit-transform: translateY(-100%);*/
+  /*transform: translateX(100%);*/
   /*right: 100%;*/
 }
 
@@ -233,6 +248,7 @@ button.faded {
   left: 0;
   right: 0;
   bottom: 0;
+  @include transition(opacity 1s easе);
 }
 
 .c-joke {
