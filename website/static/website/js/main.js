@@ -80,6 +80,8 @@ function init() {
                 $body.addClass('show-third');
                 break;
             case 3:
+                $body.addClass('no-overlay');
+                $body.removeClass('show-third');
                 $thirdOverlay.addClass('move-out');
                 $nextBtn.addClass('faded');
                 startLoadingCircle();
