@@ -41,7 +41,7 @@ function init() {
                 }]
             }
         };
-        console.log(constraints.video);
+        //console.log(constraints.video);
 
         if (navigator.getUserMedia) {
             navigator.getUserMedia(constraints, handleVideo, videoError);
@@ -66,7 +66,7 @@ function init() {
         $body = $('body');
     $nextBtn.on('click tap', function () {
         count+=1;
-        console.log('click' + count);
+        //console.log('click' + count);
 
         switch (count) {
             case 1:
@@ -124,9 +124,11 @@ function init() {
         $body.addClass('show-third');
     });
 
-    function startLoadingCircle() {
-      setTimeout( function() {
-        $('.loading-indicator').addClass('complete');
-      }, 5000);
-    }
+    //function startLoadingCircle() {
+    //  setTimeout( function() {
+    //    $('.loading-indicator').addClass('complete');
+    //  }, 5000);
+    //}
+
+
 }
