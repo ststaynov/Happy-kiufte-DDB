@@ -93,6 +93,7 @@ body.show-third .e-order .second {
     position: fixed;
     top: 80px;
     text-align: center;
+    font-size: 0;
     z-index: 2;
 }
 
