@@ -121,7 +121,7 @@ function init() {
 
     $joke.on('click tap', function () {
         console.log('Joke');
-        count = 3;
+        count = 2;
         $secondOverlay.addClass('move-out');
         $body.removeClass('show-second');
         $body.addClass('show-third');
@@ -135,10 +135,6 @@ function init() {
     }
 
     //Audio Starts here
-        var $playButtonFirst = $('#playButtonFirst'),
-        $playButtonSecond = $('#playButtonSecond'),
-        $slider = $('#div-slider'),
-        $body = $('body');
 
     var AudioContext;
     var audioFirst,
@@ -214,43 +210,11 @@ function init() {
 
     function startButton_Clicked(audio) {
       audio.play();
-      slider.value = audio.currentTime;
-      console.log("in startButton_Clicked mathod");
-      // Using four seconds so the user can change the value of
-      // the slider. Too short interval will cause the automatic
-      // updating to steal the control from the user.
-        refreshIntervalId = setInterval(function () {
-            slider.value = audio.currentTime;
-        }, 2000);
     }
 
-    //function jumpTo(here) {
-    //console.log('AudioFirstPlaying: ' + audioFirstPlaying + " audioSecondPlaying" + audioSecondPlaying);
-    //if(audioFirstPlaying) {
-    //    if (!audioFirst.readyState) return false;
-    //    audioFirst.currentTime = here;
-    //} else {
-    //    if (!audioSecond.readyState) return false;
-    //console.log(here);
-    //    audioSecond.currentTime = here;
-    //    }
-    //}
 
-    //slider.addEventListener("change", function () {
-    //    jumpTo(this.value);
-    //});
-    //
-    //function millisecondsToHuman(milliseconds) {
-    //  var date = new Date(null);
-    //  date.setMilliseconds(milliseconds);
-    //  return date.toISOString().substr(11, 8);
-    //}
-
-    //document.getElementById("playButtonFirst").addEventListener("click", function() {
-    //    startButton_Clicked(audioFirst);
-    //});
-
-    firstTrackUrl = "http://api.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
+    firstTrackUrl = "https://ap" +
+        "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
     findTrack();
     initAudio();
 }
