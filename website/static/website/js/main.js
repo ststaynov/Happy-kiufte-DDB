@@ -64,6 +64,7 @@ function init() {
         $secondOverlay = $('.e-second-overlay'),
         $thirdOverlay = $('.e-third-overlay'),
         $body = $('body');
+
     $nextBtn.on('click tap', function () {
         count+=1;
         //console.log('click' + count);
@@ -103,6 +104,7 @@ function init() {
         $body.removeClass('show-second');
         $body.removeClass('show-third');
         count = 0;
+        document.getElementById("action").innerHTML = "Поръчай си кюфте!";
     });
 
 
@@ -113,6 +115,7 @@ function init() {
         $secondOverlay.removeClass('move-out');
         $body.addClass('show-second');
         $body.removeClass('show-third');
+        document.getElementById("action").innerHTML = "Постави кюфтето в маркера.";
     });
 
 
@@ -122,6 +125,7 @@ function init() {
         $secondOverlay.addClass('move-out');
         $body.removeClass('show-second');
         $body.addClass('show-third');
+        document.getElementById("action").innerHTML = "Чуй какво ще ти каже кюфтето.";
     });
 
     //function startLoadingCircle() {
