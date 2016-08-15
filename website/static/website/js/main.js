@@ -64,7 +64,7 @@ function init() {
         $secondOverlay = $('.e-second-overlay'),
         $thirdOverlay = $('.e-third-overlay'),
         $body = $('body');
-    $body.on('click', $nextBtn, function () {
+    $nextBtn.on('click tap', function () {
         count+=1;
         console.log('click' + count);
 
@@ -83,12 +83,44 @@ function init() {
                 $body.addClass('no-overlay');
                 $body.removeClass('show-third');
                 $thirdOverlay.addClass('move-out');
-                $nextBtn.addClass('faded');
+                //$nextBtn.addClass('faded');
                 startLoadingCircle();
                 break;
         }
     })
 
+    var $order = $('.e-order'),
+        $scan = $('.e-scan'),
+        $joke = $('.e-joke');
+
+    $order.on('click tap', function () {
+        console.log('Order');
+        $firstOverlay.removeClass('move-out');
+        $secondOverlay.removeClass('move-out');
+        $thirdOverlay.removeClass('move-out');
+        $body.removeClass('show-second');
+        $body.removeClass('show-third');
+        count = 0;
+    })
+
+
+    $scan.on('click tap', function () {
+        console.log('Scan');
+        count = 1;
+        $firstOverlay.addClass('move-out');
+        $secondOverlay.removeClass('move-out');
+        $body.addClass('show-second');
+        $body.removeClass('show-third');
+    })
+
+
+    $joke.on('click tap', function () {
+        console.log('Joke');
+        count = 3;
+        $secondOverlay.addClass('move-out');
+        $body.removeClass('show-second');
+        $body.addClass('show-third');
+    })
 
     function startLoadingCircle() {
         var paths = document.getElementsByClassName('styled');
