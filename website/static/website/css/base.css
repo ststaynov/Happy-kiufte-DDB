@@ -9,12 +9,6 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cd4f00+0,ca0e05+50,9b0c05+100 */
-    background: rgb(205,79,0); /* Old browsers */
-    background: -moz-linear-gradient(45deg, rgba(205,79,0,1) 30%, rgba(202,14,5,1) 50%, rgba(155,12,5,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(205,79,0,1) 30%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, rgba(205,79,0,1) 30%,rgba(202,14,5,1) 50%,rgba(155,12,5,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd4f00', endColorstr='#9b0c05',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 img {
     position: absolute;
@@ -366,8 +360,8 @@ svg circle:last-of-type {
   transition: stroke-dashoffset 0.5s ease-out;
 }
 .complete svg {
-  -webkit-animation-name: scaledown;
-          animation-name: scaledown;
+    -webkit-animation: scaledown 0.5s 0s 1 ease-in-out forwards;
+    animation: scaledown 0.5s 0s 1 ease-in-out forwards;
 }
 p {
   text-align: center;

@@ -64,7 +64,7 @@ function init() {
         $secondOverlay = $('.e-second-overlay'),
         $thirdOverlay = $('.e-third-overlay'),
         $body = $('body');
-    $nextBtn.on('click', function () {
+    $nextBtn.on('click tap', function () {
         count+=1;
         console.log('click' + count);
 
@@ -73,20 +73,23 @@ function init() {
                 $firstOverlay.addClass('move-out');
                 $body.addClass('show-second');
                 $body.removeClass('show-third');
+                document.getElementById("action").innerHTML = "Постави кюфтето в маркера.";
                 break;
             case 2:
                 $secondOverlay.addClass('move-out');
                 $body.removeClass('show-second');
                 $body.addClass('show-third');
+                document.getElementById("action").innerHTML = "Чуй какво ще ти каже кюфтето.";
                 break;
             case 3:
                 $body.addClass('no-overlay');
                 $body.removeClass('show-third');
                 $thirdOverlay.addClass('move-out');
                 startLoadingCircle();
+                document.getElementById("btn-next").innerHTML = "маркирай кюфтето.";
                 break;
         }
-    })
+    });
 
     var $order = $('.e-order'),
         $scan = $('.e-scan'),
@@ -100,7 +103,7 @@ function init() {
         $body.removeClass('show-second');
         $body.removeClass('show-third');
         count = 0;
-    })
+    });
 
 
     $scan.on('click tap', function () {
@@ -110,7 +113,7 @@ function init() {
         $secondOverlay.removeClass('move-out');
         $body.addClass('show-second');
         $body.removeClass('show-third');
-    })
+    });
 
 
     $joke.on('click tap', function () {
@@ -119,11 +122,11 @@ function init() {
         $secondOverlay.addClass('move-out');
         $body.removeClass('show-second');
         $body.addClass('show-third');
-    })
+    });
 
     function startLoadingCircle() {
       setTimeout( function() {
-
-      }, (Math.random() * 5000));
+        $('.loading-indicator').addClass('complete');
+      }, 5000);
     }
 }
