@@ -128,11 +128,129 @@ function init() {
         document.getElementById("action").innerHTML = "Чуй какво ще ти каже кюфтето.";
     });
 
-    //function startLoadingCircle() {
-    //  setTimeout( function() {
-    //    $('.loading-indicator').addClass('complete');
-    //  }, 5000);
+    function startLoadingCircle() {
+      setTimeout( function() {
+        startButton_Clicked(audioFirst);
+      }, 5000);
+    }
+
+    //Audio Starts here
+        var $playButtonFirst = $('#playButtonFirst'),
+        $playButtonSecond = $('#playButtonSecond'),
+        $slider = $('#div-slider'),
+        $body = $('body');
+
+    var AudioContext;
+    var audioFirst,
+        audioSecond,
+        audio;
+
+    var sliderFirstMax;
+
+    var totalTimeFirst;
+
+    var audioFirstPlaying = false;
+
+    var audioContext;
+    var source;
+    var analyser;
+
+    var streamUrlFirst;
+
+    var refreshIntervalId;
+
+    function initAudio(streamUrlFirst, streamUrlSecond ) {
+      AudioContext = window.AudioContext || window.webkitAudioContext;
+
+      audioFirst = new Audio();
+
+      audioFirst.crossOrigin = "anonymous";
+
+      audioFirst.preload = "auto";
+
+      audioContext = new AudioContext();
+      source = audioContext.createMediaElementSource(audioFirst);
+      source.connect(audioContext.destination);
+      analyser = audioContext.createAnalyser();
+      source.connect(analyser);
+    }
+
+    function get(url, callback) {
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+        if (request.readyState === 4 && request.status === 200) {
+          callback(request.responseText);
+        }
+      };
+
+      request.open("GET", url, true);
+      request.send(null);
+    }
+
+    var clientParameter = "client_id=3b2585ef4a5eff04935abe84aad5f3f3";
+
+    // Basing everything on the track's permalink URL. That is what the user knows.
+    // Makes it possible to use the text box for pasting any track URL.
+    // The Outsider is a friend of mine.
+    // The majority of his tracks are on Mixcloud:
+    // https://www.mixcloud.com/outsider_music/
+    var trackPermalinkUrlFirst = "275604209",
+        trackPermalinkUrlSecond = "275604335";
+
+    var firstTrackUrl;
+
+    function findTrack() {
+       get(firstTrackUrl,
+           function (response) {
+         var trackInfo = JSON.parse(response);
+         sliderFirstMax = trackInfo.duration / 1000;
+         streamUrlFirst = trackInfo.stream_url + "?" + clientParameter;
+         audioFirst.src = streamUrlFirst;
+         audioFirst.play();
+         audioFirst.pause();
+       }
+      );
+     };
+
+    function startButton_Clicked(audio) {
+      audio.play();
+      slider.value = audio.currentTime;
+      console.log("in startButton_Clicked mathod");
+      // Using four seconds so the user can change the value of
+      // the slider. Too short interval will cause the automatic
+      // updating to steal the control from the user.
+        refreshIntervalId = setInterval(function () {
+            slider.value = audio.currentTime;
+        }, 2000);
+    }
+
+    //function jumpTo(here) {
+    //console.log('AudioFirstPlaying: ' + audioFirstPlaying + " audioSecondPlaying" + audioSecondPlaying);
+    //if(audioFirstPlaying) {
+    //    if (!audioFirst.readyState) return false;
+    //    audioFirst.currentTime = here;
+    //} else {
+    //    if (!audioSecond.readyState) return false;
+    //console.log(here);
+    //    audioSecond.currentTime = here;
+    //    }
     //}
 
+    //slider.addEventListener("change", function () {
+    //    jumpTo(this.value);
+    //});
+    //
+    //function millisecondsToHuman(milliseconds) {
+    //  var date = new Date(null);
+    //  date.setMilliseconds(milliseconds);
+    //  return date.toISOString().substr(11, 8);
+    //}
 
+    //document.getElementById("playButtonFirst").addEventListener("click", function() {
+    //    startButton_Clicked(audioFirst);
+    //});
+
+    firstTrackUrl = "http://api.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
+    findTrack();
+    initAudio();
 }
