@@ -88,6 +88,10 @@ function init() {
                 $thirdOverlay.addClass('move-out');
                 startLoadingCircle();
                 document.getElementById("btn-next").innerHTML = "маркирай кюфтето.";
+
+                setTimeout( function() {
+                    audioFirst.play();
+                }, 5000);
                 break;
         }
     });
@@ -203,8 +207,8 @@ function init() {
          sliderFirstMax = trackInfo.duration / 1000;
          streamUrlFirst = trackInfo.stream_url + "?" + clientParameter;
          audioFirst.src = streamUrlFirst;
-         audioFirst.play();
-         audioFirst.pause();
+         //audioFirst.play();
+         //audioFirst.pause();
        }
       );
      };
@@ -214,7 +218,7 @@ function init() {
     }
 
     var activate = true;
-    $body.on('click tap', function () {
+    $body.on('click', function () {
         if(activate) {
             firstTrackUrl = "https://ap" + "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
             findTrack();
