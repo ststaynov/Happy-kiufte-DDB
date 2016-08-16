@@ -122,6 +122,7 @@ function init() {
     $joke.on('click tap', function () {
         console.log('Joke');
         count = 2;
+        $firstOverlay.addClass('move-out');
         $secondOverlay.addClass('move-out');
         $body.removeClass('show-second');
         $body.addClass('show-third');

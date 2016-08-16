@@ -131,25 +131,27 @@ body.show-third .e-first {
 .e-order,
 .e-scan,
 .e-joke {
+    width: 11%;
+    height: 11%;
     position: relative;
-    width: 54px;
-    height: 53px;
+    margin: 4px;
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.e-order {
-    float: left;
-}
+/*.e-order {*/
+    /*float: left;*/
+/*}*/
+/*}*/
 
 .e-scan .first {
     opacity: 0;
 }
 
-.e-joke {
-    float: right;
-}
+/*.e-joke {*/
+    /*float: right;*/
+/*}*/
 
 
 .e-joke .first {
@@ -157,7 +159,9 @@ body.show-third .e-first {
 }
 
 .e-dashed-line {
-    width: 24%;
+    position: relative;
+    top: 21px;
+    width: 23%;
     height: 29px;
     display: inline-block;
     background-size: contain;
