@@ -167,9 +167,7 @@ function init() {
       AudioContext = window.AudioContext || window.webkitAudioContext;
 
       audioFirst = new Audio();
-
       audioFirst.crossOrigin = "anonymous";
-
       audioFirst.preload = "auto";
 
       audioContext = new AudioContext();
@@ -211,15 +209,14 @@ function init() {
          audioFirst.src = streamUrlFirst;
          //audioFirst.play();
          //audioFirst.pause();
-       }
-      );
+       });
      };
 
     function startButton_Clicked(audio) {
       //audio.play();
     }
 
-            firstTrackUrl = "https://ap" + "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
+            firstTrackUrl = "https://ap" + "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/vits&client_id=3b2585ef4a5eff04935abe84aad5f3f3";
             findTrack();
             initAudio();
 }
