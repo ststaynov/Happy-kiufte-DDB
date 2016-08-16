@@ -131,6 +131,7 @@ function init() {
 
     function startLoadingCircle() {
       setTimeout( function() {
+        console.log("Start Audio now!");
         startButton_Clicked(audioFirst);
       }, 5000);
     }
@@ -191,8 +192,7 @@ function init() {
     // The Outsider is a friend of mine.
     // The majority of his tracks are on Mixcloud:
     // https://www.mixcloud.com/outsider_music/
-    var trackPermalinkUrlFirst = "275604209",
-        trackPermalinkUrlSecond = "275604335";
+    var trackPermalinkUrlFirst = "275604209";
 
     var firstTrackUrl;
 
@@ -213,9 +213,13 @@ function init() {
       audio.play();
     }
 
-
-    firstTrackUrl = "https://ap" +
-        "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
-    findTrack();
-    initAudio();
+    var activate = true;
+    $body.on('click tap', function () {
+        if(activate) {
+            firstTrackUrl = "https://ap" + "i.soundcloud.com/resolve.json?url=https://soundcloud.com/user-50631610/paddy-telefon-kampaniya-1&client_id=3b2585ef4a5eff04935abe84aad5f3f3"
+            findTrack();
+            initAudio();
+        }
+        activate = false;
+    });
 }
