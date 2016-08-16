@@ -61,6 +61,23 @@ body.show-third .e-order .second {
     opacity: 0;
 }
 
+.complete .kiufte {
+    -webkit-animation: scaleup 0.5s 0s 1 ease-in-out forwards;
+    animation: scaleup 0.5s 0s 1 ease-in-out forwards;
+
+}
+
+.kiufte {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/kiufte.png);
+}
+
 .c-logo-container {
     width: 100%;
     height: 80px;
@@ -338,6 +355,11 @@ button.faded {
 * {
   box-sizing: border-box;
 }
+body.show-joke .loading-indicator {
+    -webkit-animation: customscaledown 0.5s 0s 1 ease-in-out forwards;
+    animation: customscaledown 0.5s 0s 1 ease-in-out forwards;
+}
+
 .loading-indicator {
   /*-webkit-animation: rotatefull 9s 0s infinite linear forwards;*/
           /*animation: rotatefull 9s 0s infinite linear forwards;*/
@@ -378,6 +400,7 @@ p {
   -webkit-animation: scaledown 0.5s 0s 1 ease-in-out forwards;
           animation: scaledown 0.5s 0s 1 ease-in-out forwards;
 }
+
 @-webkit-keyframes rotatefull {
   0% {
     -webkit-transform: translate3d(-50%, 0, 0) rotate(0);
@@ -474,28 +497,36 @@ p {
   72% {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+    opacity: 1;
   }
   84% {
     -webkit-transform: scale(0.95);
             transform: scale(0.95);
+    opacity: 1;
   }
   98% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
   }
   99% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
   }
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
   }
 }
+
+
+
 @-webkit-keyframes scaledown {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
   15% {
@@ -532,3 +563,4 @@ p {
     opacity: 0;
   }
 }
+
